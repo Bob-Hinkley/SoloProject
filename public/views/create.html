@@ -1,0 +1,126 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-brand">
+        <!-- <a href="#"><img src="http://i.imgur.com/YAjjems.png" class="img-responsive" /></a> -->
+        <p><a href="/home">Quiz Monster</a></p>
+        </div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li><a href="/">Home</a></li> -->
+        <!-- <li><a href="~/About/Index">About</a></li> -->
+        <li><a href="~/Contact/Index">Sign Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="container">
+
+<div id="create-title">
+<h1 style="text-align: center;">Create Test</h1>
+</div>
+<br />
+<div>
+  <div id="create-test-input">
+  <input type="text" ng-model="testName" placeholder="Test Name"required/>
+  <!-- <button ng-click="createHtml = !createHtml">Save Name</button> -->
+  <button class="btn btn-primary" ng-init="show=false" ng-click="createHtml = !createHtml;show=true; createTestName()">Save Name</button>
+  </div>
+
+  <br>
+  <br>
+  <!-- <main ng-init="showQuestions()" ng-show="createHtml"> -->
+    <main ng-init="showQuestions()" ng-show="show">
+
+
+    <!-- Question Drop Down -->
+    <label>Question Type:</label>
+    <div>
+      <select name="type" ng-model="testQuestionsType" ng-dropdown required>
+        <option ng-option value="true/false">True/False</option>
+        <option ng-option value="multiplechoice">Multiplechoice</option>
+        <option ng-option value="essay">Essay</option>
+      </select>
+    </div>
+
+          <!-- True/False HTML -->
+    <div id="trueFalse" ng-show="testQuestionsType == 'true/false'">
+      <!-- <label>True/False :</label> -->
+      <form id="tf-temp">
+        <div id="create-tf">
+          <input type="text" ng-model="question"placeholder="Question"/><br /><br>
+          <input type="radio">
+          <input type="text" ng-model="answer1" placeholder="Answer 1" />
+          <input type="checkbox" value="" /><br>
+          <input type="radio">
+          <input type="text" ng-model="answer2" placeholder="Answer 2"/>
+          <input type="checkbox" value="" /><br>
+
+          <button class="btn btn-primary" ng-click="addNewQuestion(); showQuestions()" type="button">Save Question</button>
+          <button class="btn btn-primary" type="button">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+      <!-- Multiple Choice HTML -->
+    <div id="multipleChoice" ng-show="testQuestionsType == 'multiplechoice'">
+      <!-- <label>Multiplechoice :</label> -->
+      <form id="mc-temp">
+        <div id="create-multiple">
+          <input type="text" ng-model="question"placeholder="Question"/><br /><br>
+          <input type="radio">
+          <input type="text" ng-model="answer1" placeholder="Answer 1" />
+          <input type="checkbox" value="" /><br>
+          <input type="radio">
+          <input type="text" ng-model="answer2" placeholder="Answer 2"/>
+          <input type="checkbox" value="" /><br>
+          <input type="radio">
+          <input type="text" ng-model="answer3" placeholder="Answer 3"/>
+          <input type="checkbox" value="" /><br>
+          <input type="radio">
+          <input type="text" ng-model="answer4" placeholder="Answer 4"/>
+          <input type="checkbox" value="" /><br>
+        </div>
+        <div id="create-multiple">
+          <!-- <button ng-click="showQuestions()" type="button">Save Question</button> -->
+          <button class="btn btn-primary" ng-click="addNewQuestion(); showQuestions(); clearMcQuestion()" type="button">Save Question</button>
+          <button type="button" class="btn btn-primary">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+      <!-- Essay HTML   /> -->
+    <div id="essay" ng-show="testQuestionsType == 'essay'">
+      <!-- <label>Essay :</label> -->
+    </div>
+  </div>
+
+  <div class="questionDisplay" ng-repeat="individualQuestion in questions">
+    <p>{{individualQuestion.question}}</p>
+    <input type="radio" />{{individualQuestion.answer1}}
+    <input type="radio" />{{individualQuestion.answer2}}
+    <input type="radio" />{{individualQuestion.answer3}}
+    <input type="radio" />{{individualQuestion.answer4}}
+  </div>
+
+<br>
+<br>
+<br>
+<br>
+<!-- <div id="create-save"> -->
+  <div id="create-save" ng-show="show">
+  <button class="btn btn-primary" onclick="window.location.href='/home'">Save Test</button>
+</div>
+
+</main>
+
+</div>

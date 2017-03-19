@@ -1,0 +1,31 @@
+{
+  "name": "solo_project",
+  "version": "1.0.0",
+  "description": "Test Web App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bob-Hinkley/solo.git"
+  },
+  "author": "Bob Hinkley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bob-Hinkley/solo/issues"
+  },
+  "homepage": "https://github.com/Bob-Hinkley/solo#readme",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.16.1",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.1",
+    "express-session": "^1.15.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pg": "^6.1.2"
+  }
+}

@@ -1,0 +1,143 @@
+/* styles */
+
+.navbar-brand img {
+    width:30%;
+    height:100%;
+}
+
+.navbar-default {
+    padding-top:2px;
+    padding-bottom:2px;
+}
+
+.questionsDisplay *{
+  vertical-align: middle; margin: -1px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  max-height: 200px;
+  overflow: hidden;
+  position: absolute;
+  left: 200px;
+  top: 8px;
+  transform: rotate(-14deg);
+}
+
+#button-wrap button{
+  color: #008CBA;
+  margin: 100px auto 0 auto;
+  font-size: 30px;
+  padding: 30px;
+  width: 200px;
+  background-color: white;
+  border: 2px solid #008CBA;
+  border-radius: 10px;
+}
+
+#button-wrap button:hover {
+    background-color: #008CBA;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#create-test-input {
+ width: auto;
+ margin-left: 35%;
+ margin-right: auto;
+}
+
+#create-title {
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  border-bottom: solid 2px;
+}
+
+#view-title {
+  margin-top: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  border-bottom: solid 2px;
+}
+
+#create-multiple {
+  padding: 5px;
+}
+
+
+#create-tf {
+  padding: 5px;
+}
+#create-save {
+  padding-bottom: 20px;
+}
+#create-save button {
+  width: 350px !important;
+  margin-left: 31%;
+  margin-right: auto;
+}
+/*span {
+  font-size: 30px;
+}*/
+
+.btn-sq-lg {
+  width: 150px !important;
+  height: 150px !important;
+}
+
+#container {
+  margin: 100px 0 0 0;
+}
+
+#title {
+  text-align: center;
+}
+#right-create-test {
+  float: right;
+  width: auto;
+}
+
+#mc-temp {
+  height: auto;
+  width: 300px;
+  border-style: solid;
+}
+
+/*#mc-temp button{
+  float: right;
+}*/
+
+#tf-temp{
+  height: auto;
+  width: 300px;
+  border-style: solid;
+}
+
+#essay-temp{
+
+}
+
+.questionDisplay{
+  height: auto;
+  width: 300px;
+  border-style: solid;
+    padding: 5px;
+}
+
+.questionDisplay input{
+
+}
+
+.testDisplay{
+  height: auto;
+  width: 300px;
+  border-style: solid;
+    padding: 5px;
+  margin: 10px;
+}

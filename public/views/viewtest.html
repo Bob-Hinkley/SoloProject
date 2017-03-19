@@ -1,0 +1,17 @@
+
+
+<h1>View Individual Tests</h1>
+
+<h2>{{testName}}</h2>
+
+<main ng-init="showQuestions()">
+
+  <div class="testDisplay" ng-repeat="individualQuestion in questions">
+    <p>{{individualQuestion.question}}</p>
+    <input type="radio" />{{individualQuestion.answer1}}
+    <input type="radio" />{{individualQuestion.answer2}}
+    <input type="radio" />{{individualQuestion.answer3}}
+    <input type="radio" />{{individualQuestion.answer4}}
+  </div>
+
+</main>

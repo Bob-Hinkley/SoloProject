@@ -1,0 +1,63 @@
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-brand">
+        <!-- <a href="#"><img src="http://i.imgur.com/4als9a8.png" class="img-responsive" /></a> -->
+        <p><a href="/home">Quiz Monster</a></p>
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li><a href="/">Home</a></li> -->
+        <!-- <li><a href="~/About/Index">About</a></li> -->
+        <li><a href="~/Contact/Index">Sign Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div id="view-title">
+<h1 style="text-align: center;">View Tests</h1>
+</div>
+<br />
+
+
+<!-- <button onclick="window.location.href='/home'">Home</button> -->
+
+<main ng-init="showTests()">
+
+
+
+  <div class="testDisplay" ng-click="showQuestions(individualTest.test_id); showTest(testIndex)" ng-repeat="(testIndex, individualTest) in tests">
+    <h4><u>{{individualTest.testname}}</u></h4>
+
+    <div class="questionsDisplay" ng-repeat="individualQuestion in questions" ng-show="isShowing(testIndex)" >
+      <p>{{individualQuestion.question}}</p>
+      <ul>
+
+
+    <li>  <input type="radio" />{{individualQuestion.answer1}}</li>
+    <li>  <input type="radio" />{{individualQuestion.answer2}}</li>
+    <li>  <input type="radio" />{{individualQuestion.answer3}}</li>
+    <li>  <input type="radio" />{{individualQuestion.answer4}}</li>
+            </ul>
+    </div>
+
+    <button class="btn btn-primary" ng-model="whatever">Edit</button>
+    <button class="btn btn-primary" ng-model="whatever" ng-click="deleteTests(individualTest.test_id)">Delete</button>
+
+  </div>
+
+
+
+</main>
