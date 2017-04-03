@@ -41,6 +41,7 @@ router.get('/showQuestions/:test_id', function(req, res) {
         [req.params.test_id],
           function(err, result) {
           done();
+          console.log('Getting test_id: ', req.params.test_id);
           // console.log('req.body.test_id  = ', req.body.test_id);
           if (err) {
             console.log('Error querying DB', err);

@@ -39,7 +39,7 @@
   <br>
   <br>
   <!-- <main ng-init="showQuestions()" ng-show="createHtml"> -->
-    <main ng-init="showQuestions()" ng-show="show">
+    <main ng-show="show">
 
 
     <!-- Question Drop Down -->
@@ -104,7 +104,7 @@
     </div>
   </div>
 
-  <div class="questionDisplay" ng-repeat="individualQuestion in questions">
+  <div class="questionDisplay" ng-repeat="individualQuestion in questions track by $index">
     <p>{{individualQuestion.question}}</p>
     <input type="radio" />{{individualQuestion.answer1}}
     <input type="radio" />{{individualQuestion.answer2}}

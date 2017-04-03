@@ -35,7 +35,7 @@ app.controller('CreateController', function($scope, $http) {
 
   //adds question to 'mutltiple' table
   $scope.addNewQuestion = function(){
-    console.log('Save Question felt something...');
+    // console.log('Save Question felt something...');
     var objectToSend = {
       question: $scope.question,
       answer1: $scope.answer1,
@@ -80,7 +80,7 @@ app.controller('CreateController', function($scope, $http) {
     console.log('Getting from test: ', $scope.test_id);
     return $http({
       method: 'GET',
-      url: '/create/showQuestions'
+      url: '/create/showQuestions/' + $scope.test_id
     }).then(function(response){
       console.log('Getting Questions: ', response);
       $scope.questions = response.data;

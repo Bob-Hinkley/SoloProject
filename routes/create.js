@@ -21,10 +21,11 @@ router.post('/addNewQuestion', function(req, res) {
           function(err, result) {
           done();
           if (err) {
+            console.log('req.params: ', req.params);
             console.log('Error querying DB', err);
             res.sendStatus(500);
           } else {
-            console.log('Got info from DB', result.rows);
+            console.log('Got info from DB addNewQuestion()', result.rows);
             res.send(result.rows);
           }
         }
@@ -48,7 +49,7 @@ router.post('/createTestName', function(req, res) {
             console.log('Error querying DB', err);
             res.sendStatus(500);
           } else {
-            console.log('Got info from DB', result.rows);
+            console.log('Got info from DB createTestName()', result.rows);
             res.send(result.rows);
           }
         }
@@ -57,17 +58,19 @@ router.post('/createTestName', function(req, res) {
   })
 })
 
-router.get('/showQuestions', function(req, res) {
+router.get('/showQuestions/:test_id', function(req, res) {
+  console.log('req/res: ', req.params);
   pool.connect(function(err, client, done) {
-    console.log('Displaying questions!');
     if(err) {
       console.log('Error connecting to DB, err');
       res.sendStatus(500);
       done()
     } else {
-        client.query('SELECT * FROM test_joins JOIN multiple ON tests_id = test_id WHERE test_id = $1',
-          [req.body.test_id],
+      client.query('SELECT * FROM multiple WHERE test_id = $1',
+        // client.query('SELECT * FROM test_joins JOIN multiple ON tests_id = test_id WHERE test_id = $1',
+          [req.params.test_id],
           function(err, result) {
+            console.log('Grabbing test_id: ', req.params.test_id);
           done();
           if (err) {
             console.log('Error querying DB', err);
