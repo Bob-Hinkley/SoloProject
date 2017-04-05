@@ -64,10 +64,6 @@ app.controller('ViewController', function($scope, $http) {
 
 
 
-// $scope.toggle = function(){
-//   $scope.isShowing = !$scope.isShowing;
-// }
-
 $scope.activeTestIndex;
 $scope.showTest = function (index) {
   $scope.activeTestIndex = index;

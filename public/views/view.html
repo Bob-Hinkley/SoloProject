@@ -41,15 +41,15 @@
   <div class="testDisplay" ng-click="showQuestions(individualTest.test_id); showTest(testIndex)" ng-repeat="(testIndex, individualTest) in tests">
     <h4><u>{{individualTest.testname}}</u></h4>
 
-    <div class="questionsDisplay" ng-repeat="individualQuestion in questions" ng-show="isShowing(testIndex)" >
+    <div class="questionsDisplay" ng-repeat="individualQuestion in questions" ng-show="isShowing(testIndex)">
       <p>{{individualQuestion.question}}</p>
       <ul>
 
 
-    <li>  <input type="radio" />{{individualQuestion.answer1}}</li>
-    <li>  <input type="radio" />{{individualQuestion.answer2}}</li>
-    <li>  <input type="radio" />{{individualQuestion.answer3}}</li>
-    <li>  <input type="radio" />{{individualQuestion.answer4}}</li>
+    <li><input type="radio" />{{individualQuestion.answer1}}</li>
+    <li><input type="radio" />{{individualQuestion.answer2}}</li>
+    <li ng-if="individualQuestion.answer3 !== null"><input type="radio" />{{individualQuestion.answer3}}</li>
+    <li ng-if="individualQuestion.answer3 !== null"><input type="radio" />{{individualQuestion.answer4}}</li>
             </ul>
     </div>
 

@@ -13,7 +13,8 @@ router.get('/showTests', function(req, res) {
       res.sendStatus(500);
       done()
     } else {
-        client.query('SELECT * FROM multiple JOIN test_joins ON multiple.test_id = test_joins.tests_id JOIN tests ON test_joins.tests_id = tests.test_id WHERE users_id = $1',
+        // client.query('SELECT * FROM multiple JOIN test_joins ON multiple.test_id = test_joins.tests_id JOIN tests ON test_joins.tests_id = tests.test_id WHERE users_id = $1',
+        client.query('SELECT * FROM tests JOIN test_joins ON tests.test_id = test_joins.tests_id WHERE users_id = $1',
           [req.user.id],
           function(err, result) {
           done();

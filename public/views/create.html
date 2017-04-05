@@ -65,7 +65,7 @@
           <input type="text" ng-model="answer2" placeholder="Answer 2"/>
           <input type="checkbox" value="" /><br>
 
-          <button class="btn btn-primary" ng-click="addNewQuestion(); showQuestions()" type="button">Save Question</button>
+          <button class="btn btn-primary" ng-click="addNewQuestion(); showQuestions(); clearTfQuestion()" type="button">Save Question</button>
           <button class="btn btn-primary" type="button">Cancel</button>
         </div>
       </form>
@@ -106,10 +106,12 @@
 
   <div class="questionDisplay" ng-repeat="individualQuestion in questions track by $index">
     <p>{{individualQuestion.question}}</p>
-    <input type="radio" />{{individualQuestion.answer1}}
-    <input type="radio" />{{individualQuestion.answer2}}
-    <input type="radio" />{{individualQuestion.answer3}}
-    <input type="radio" />{{individualQuestion.answer4}}
+    <ul>
+    <li><input type="radio" />{{individualQuestion.answer1}}</li>
+    <li><input type="radio" />{{individualQuestion.answer2}}</li>
+    <li ng-if="individualQuestion.answer3 !== null"><input type="radio" />{{individualQuestion.answer3}}</li>
+    <li ng-if="individualQuestion.answer3 !== null"><input type="radio" />{{individualQuestion.answer4}}</li>
+  </ul>
   </div>
 
 <br>

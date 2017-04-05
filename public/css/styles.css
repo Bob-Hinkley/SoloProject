@@ -10,9 +10,9 @@
     padding-bottom:2px;
 }
 
-.questionsDisplay *{
+/*.questionsDisplay *{
   vertical-align: middle; margin: -1px;
-}
+}*/
 
 ul {
   list-style: none;
@@ -128,6 +128,10 @@ img {
   width: 300px;
   border-style: solid;
     padding: 5px;
+}
+
+.questionDisplay * {
+  vertical-align: middle; margin: -1px;
 }
 
 .questionDisplay input{

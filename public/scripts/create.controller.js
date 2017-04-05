@@ -55,6 +55,8 @@ app.controller('CreateController', function($scope, $http) {
     }).then(function(response){
       $scope.showQuestions();
       console.log('Showing questions: ', response);
+      console.log('Clearing MC question!');
+        document.getElementById("create-multiple").innerHTML = "";
     }).catch(function(err){
       console.log('Error getting questions from DB: ', err);
     })
@@ -92,13 +94,14 @@ app.controller('CreateController', function($scope, $http) {
 
   //clears question input fields - multiple choice
   function clearMcQuestion() {
-    console.log('Clearing question!');
-      document.getElementById("create-multiple").val("");
+    console.log('Clearing MC question!');
+      document.getElementById("create-multiple").innerHTML = "";
   }
 
   //clears question input fields - true/false
   function clearTfQuestion() {
-      document.getElementById("tf-temp").val("");
+    console.log('Clearing TF question!');
+      document.getElementById("tf-temp").innerHTML = "";
   }
 
 
@@ -110,12 +113,3 @@ app.controller('CreateController', function($scope, $http) {
 
 
 });
-
-
-// var question = {question1:"", question2:""}
-// objects represent form fields
-// object contstructor
-
-//options (data) coming back to client determines formatting
-// IF statements on data coming from specific SQL table
-//ng-show html template below questions, ng-repeat takes care of the rest
