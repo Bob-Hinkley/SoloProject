@@ -107,6 +107,7 @@ img {
   height: auto;
   width: 300px;
   border-style: solid;
+  border-color: lightgrey;
 }
 
 /*#mc-temp button{
@@ -117,9 +118,11 @@ img {
   height: auto;
   width: 300px;
   border-style: solid;
+  border-color: lightgrey;
 }
 
 #essay-temp{
+border-color: lightgrey;
 
 }
 
@@ -128,6 +131,8 @@ img {
   width: 300px;
   border-style: solid;
     padding: 5px;
+  margin-top: 10px;
+  border-color: lightgrey;
 }
 
 .questionDisplay * {
@@ -144,4 +149,5 @@ img {
   border-style: solid;
     padding: 5px;
   margin: 10px;
+  border-color: grey;
 }

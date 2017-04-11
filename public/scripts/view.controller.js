@@ -7,8 +7,9 @@ app.controller('ViewController', function($scope, $http) {
 
   $scope.tests = [];
   $scope.questions = [];
+  // $scope.editing = false;
 
-
+  //shows all of the tests available to specific user logged in
   $scope.showTests = function() {
     return $http({
       method: 'GET',
@@ -22,7 +23,7 @@ app.controller('ViewController', function($scope, $http) {
   };
 
 
-
+  //displays questions in each test
   $scope.showQuestions = function(test_id) {
     return $http({
       method: 'GET',
@@ -35,20 +36,8 @@ app.controller('ViewController', function($scope, $http) {
     })
   };
 
+  //deletes test from DB
   $scope.deleteTests = function(test_id) {
-    // console.log('Deleting tests');
-  //   if (req.params.tests_id == tests_id) {
-  //     return $http({
-  //       method: 'DELETE',
-  //       url: '/view/deleteTests/' + tests_id
-  //     }).then(function(response){
-  //       console.log('Deleting test: ', response);
-  //       // $scope.questions = response.data;
-  //     }).catch(function(err){
-  //       console.log('Error getting questions from DB: ', err);
-  //     })
-  //   // }
-  // } else {
     return $http({
       method: 'DELETE',
       url: '/view/deleteTests/' + test_id
@@ -62,8 +51,7 @@ app.controller('ViewController', function($scope, $http) {
   // }
 }
 
-
-
+//Logic for when a user clicks on test, it's 'selected' and will display proper questions.
 $scope.activeTestIndex;
 $scope.showTest = function (index) {
   $scope.activeTestIndex = index;
@@ -71,6 +59,42 @@ $scope.showTest = function (index) {
 $scope.isShowing = function(index) {
   return $scope.activeTestIndex === index;
 }
+
+
+//Logic for editing test questions.
+$scope.selected = {}
+
+$scope.getTemplate = function (individualQuestion) {
+ if (individualQuestion.answerID === $scope.selected.answerID){
+  return 'edit';
+ }
+ else return 'display';
+};
+
+$scope.editTest = function (individualQuestion) {
+ $scope.selected = angular.copy(individualQuestion);
+};
+
+// $scope.editKey = function(field) {
+//     $scope.editing = $scope.questions.indexOf(field);
+//     $scope.newField = angular.copy(field);
+// }
+//
+// $scope.saveField = function(index) {
+//     if ($scope.editing !== false) {
+//         $scope.questions[$scope.editing] = $scope.newField;
+//         $scope.editing = false;
+//     }
+// };
+//
+// $scope.cancel = function(index) {
+//     if ($scope.editing !== false) {
+//         $scope.questions[$scope.editing] = $scope.newField;
+//         $scope.editing = false;
+//     }
+// };
+
+
 
 
 });

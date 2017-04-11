@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Bob-Hinkley/solo#readme",
   "dependencies": {
     "angular": "^1.6.2",
+    "angular-xeditable": "^0.7.0",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.16.1",
     "bootstrap": "^3.3.7",

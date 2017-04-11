@@ -27,7 +27,7 @@
 
 
 <div id="view-title">
-<h1 style="text-align: center;">View Tests</h1>
+  <h1 style="text-align: center;">View Tests</h1>
 </div>
 <br />
 
@@ -44,17 +44,18 @@
     <div class="questionsDisplay" ng-repeat="individualQuestion in questions" ng-show="isShowing(testIndex)">
       <p>{{individualQuestion.question}}</p>
       <ul>
-
-
-    <li><input type="radio" />{{individualQuestion.answer1}}</li>
-    <li><input type="radio" />{{individualQuestion.answer2}}</li>
-    <li ng-if="individualQuestion.answer3 !== null"><input type="radio" />{{individualQuestion.answer3}}</li>
-    <li ng-if="individualQuestion.answer3 !== null"><input type="radio" />{{individualQuestion.answer4}}</li>
-            </ul>
+        <li><input type="radio" />{{individualQuestion.answer1}}</li>
+        <li><input type="radio" />{{individualQuestion.answer2}}</li>
+        <li ng-if="individualQuestion.answer3 !== null"><input type="radio" />{{individualQuestion.answer3}}</li>
+        <li ng-if="individualQuestion.answer3 !== null"><input type="radio" />{{individualQuestion.answer4}}</li>
+      </ul>
     </div>
 
-    <button class="btn btn-primary" ng-model="whatever">Edit</button>
-    <button class="btn btn-primary" ng-model="whatever" ng-click="deleteTests(individualTest.test_id)">Delete</button>
+    <!-- <button class="btn btn-primary" data-ng-hide="editMode" data-ng-click="editMode = true; editKey(entry)">Edit</button> -->
+    <button class="btn btn-primary" data-ng-hide="editMode" ng-click="editEmployee(employee)">Edit</button>
+    <button class="btn btn-success" data-ng-show="editMode" data-ng-click="editMode = false">Save</button>
+    <button class="btn btn-warning" data-ng-show="editMode" data-ng-click="editMode = false; cancel()">Cancel</button>
+    <button class="btn btn-primary" data-ng-hide="editMode" ng-click="deleteTests(individualTest.test_id)">Delete</button>
 
   </div>
 

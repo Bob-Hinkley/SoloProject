@@ -35,7 +35,6 @@ app.controller('CreateController', function($scope, $http) {
 
   //adds question to 'mutltiple' table
   $scope.addNewQuestion = function(){
-    // console.log('Save Question felt something...');
     var objectToSend = {
       question: $scope.question,
       answer1: $scope.answer1,
@@ -54,9 +53,8 @@ app.controller('CreateController', function($scope, $http) {
       data: objectToSend
     }).then(function(response){
       $scope.showQuestions();
+      $scope.clearQuestion();
       console.log('Showing questions: ', response);
-      console.log('Clearing MC question!');
-        document.getElementById("create-multiple").innerHTML = "";
     }).catch(function(err){
       console.log('Error getting questions from DB: ', err);
     })
@@ -77,7 +75,7 @@ app.controller('CreateController', function($scope, $http) {
 
 
 
-
+//shows newly created questions based on test_id
   $scope.showQuestions = function() {
     console.log('Getting from test: ', $scope.test_id);
     return $http({
@@ -91,18 +89,26 @@ app.controller('CreateController', function($scope, $http) {
     })
   };
 
+//clears question input field
+$scope.clearQuestion = function() {
+  $scope.question = null;
+  $scope.answer1 = null;
+  $scope.answer2 = null;
+  $scope.answer3 = null;
+  $scope.answer4 = null;
+};
 
-  //clears question input fields - multiple choice
-  function clearMcQuestion() {
-    console.log('Clearing MC question!');
-      document.getElementById("create-multiple").innerHTML = "";
-  }
-
-  //clears question input fields - true/false
-  function clearTfQuestion() {
-    console.log('Clearing TF question!');
-      document.getElementById("tf-temp").innerHTML = "";
-  }
+  // //clears question input fields - multiple choice
+  // function clearMcQuestion() {
+  //   console.log('Clearing MC question!');
+  //     document.getElementById("create-multiple").innerHTML = "";
+  // }
+  //
+  // //clears question input fields - true/false
+  // function clearTfQuestion() {
+  //   console.log('Clearing TF question!');
+  //     document.getElementById("tf-temp").innerHTML = "";
+  // }
 
 
 
