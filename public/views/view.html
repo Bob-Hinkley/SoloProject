@@ -38,7 +38,7 @@
 
 
 
-  <div class="testDisplay" ng-click="showQuestions(individualTest.test_id); showTest(testIndex)" ng-repeat="(testIndex, individualTest) in tests">
+  <div class="testDisplay col-md-6 offset-md-6 align-self-center" ng-click="showQuestions(individualTest.test_id); showTest(testIndex)" ng-repeat="(testIndex, individualTest) in tests">
     <h4><u>{{individualTest.testname}}</u></h4>
 
     <div class="questionsDisplay" ng-repeat="individualQuestion in questions" ng-show="isShowing(testIndex)">

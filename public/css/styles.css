@@ -150,4 +150,9 @@ border-color: lightgrey;
     padding: 5px;
   margin: 10px;
   border-color: grey;
+  display: block;
+}
+
+.testDisplay p {
+  background-color: lightgrey;
 }
